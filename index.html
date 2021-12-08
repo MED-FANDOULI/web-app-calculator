@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title><calculator</title>
+    <link rel="shortcut icon" type="image/ico" href="calcu.ico">
+   <script>
+       function calcul(opp) {
+           if(opp=="+"){window.res.innerHTML=eval(window.num1.value)+eval(window.num2.value);}
+           if(opp=="-"){window.res.innerHTML=eval(window.num1.value)-eval(window.num2.value);}
+           if(opp=="*"){window.res.innerHTML=eval(window.num1.value)*eval(window.num2.value);}
+           if(opp=="/"){window.res.innerHTML=eval(window.num1.value)/eval(window.num2.value);}
+           
+       }
+       function reset() {
+           window.open("file:///D:/site%20calculatrice/index.html","_self");
+       }
+       
+       function sqrtt(){
+           var number1=eval(window.num1.value);
+           var number2=eval(window.num2.value);
+
+            if(number1!=null && number2!=null){
+                alert("you have to fill num1 or num2     § plz (: § "); 
+                window.open("file:///D:/site%20calculatrice/index.html","_self");            
+            }
+            else if(number1!=null && number2==null){
+                window.res.innerHTML=eval(Math.sqrt(number1));
+            }
+            else if(number2!=null && number1==null){
+                window.res.innerHTML=eval(Math.sqrt(number2));
+            }else{
+                alert("give me a number plz");
+                window.open("file:///D:/site%20calculatrice/index.html","_self");
+            }
+            
+           
+       }
+      
+   </script>
+    
+</head>
+<body>
+
+    <div class="all">
+        <h1>calculator</h1>
+        <div class="num1">
+           <label class="number1">first number</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+            <input type="text" placeholder="num1" id="num1">     
+     </div>
+     <br>
+     <div class="num2">
+            <label class="number2">second number</label>
+             <input type="text" placeholder="num2" id="num2">               
+     </div>
+     <br>
+     <div class="operators">
+
+        <button ><img class="add" src="+.PNG" alt="" onclick="calcul('+')"></button>
+        <button  ><img class="min" src="-.PNG" alt="" onclick="calcul('-') "></button>
+        <button><img class="mul" src="multiplication.PNG" alt="" onclick="calcul('*') "></button><br>
+        <button><img class="div" src="division.PNG" alt="" onclick="calcul('/') "></button>
+        <button><img class="pow" src="pow.PNG" alt="" onclick="window.res.innerHTML=eval(Math.pow(window.num1.value,window.num2.value));"></button>
+        <button><img class="sqrt" src="sqrt.PNG" alt="" onclick="sqrtt()"></button><br>
+        <button><img class="fact" src="fact.PNG" alt="" onclick=""></button>
+        
+     </div>
+     <div class="close-reset">
+     <div class="res"  type="text"> 
+        <output id="res"> </output>
+     </div>
+     <button  id="close" onclick="window.close();"><img class="exit" src="EXIT.PNG" alt="exit-image"></button>
+     <button id="reset"><img class="reset" src="reset.PNG" alt="" onclick="reset()"></button>
+    </div>
+    </div>
+
+
+
+   
+<!-- site will help you
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Math/pow
+--> 
+</body> 
+</html>
